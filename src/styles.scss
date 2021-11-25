@@ -36,6 +36,9 @@ span.sr-only{
     --col4vl: rgb(123, 228, 188);
     --col5: rgb(212, 212, 212);
     --appbg: #FFF4F4;
+    --dpink:#E46F80;
+    --lpink:#E9CAD2;
+    --grey:#D2D2D0;
  }
 
 .custbutton {
@@ -64,4 +67,37 @@ span.sr-only{
   }
   *{
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    max-width: 3px;
+    background: #f1f1f1; 
+    /* background-image: url("../src/media/Scroll.png");
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column; */
+  
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 10px;
+    opacity: 80%;
+      background-color:var(--lpink);;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    /* position: absolute; */
+    box-shadow: 7px 7px 7px 7px var(--grey);
+    border: #0e1a2e;
+    /* overflow: visible; */
+    /* background-image: linear-gradient(#4286f46e,#EA43356e, #FBBC046e,#34A8536e); */
   }

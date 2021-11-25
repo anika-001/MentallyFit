@@ -4,7 +4,10 @@
     // overflow-x: hidden;
     // overflow: hidden;
 }
-
+.panda{
+    height:60vh;
+    margin-top: 10vh;
+}
 .images {
     position: absolute;
     top: 0;
@@ -16,8 +19,10 @@
     height: 100vh;
     width: 100%;
     top: 0;
+    // z-index:999;  
     // left: 0;
-    background-image: url("../../assets/images/mentalhealth2.jpg");
+    // background-image: url("../../assets/images/mentalhealth2.jpg");
+    background-image: url("../../assets/images/flowers\ bg.gif");
     background-size: 100% 100%;
 }
 
@@ -175,4 +180,42 @@
 .namespace{
     font-size: 200%;
     text-align: center;
+}
+
+@media screen and (max-width: 5px) {
+    .main {
+        max-height: 100vh;
+        width: 100vw;
+        // overflow-x: hidden;
+        // overflow: hidden;
+    }
+
+    .name{
+        font-size: 20vh;
+    }
+    .tagline{
+        font-size:5vh;
+    }
+    .name2{
+        font-size:10vh;
+        padding:0.2%;
+    }
+    .info{
+        font-size:5vh;
+        padding:2%;
+    }
+    .title2{
+        font-size: 5vh;
+    }
+    .infowhatwedo{
+        padding: 0.2% 0;
+        margin-left: 60%;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 40vw;
+        height:20vh;
+        line-height: 5vh;
+        text-align: center;
+        font-size: 4vh;
+        
+    }
 }
