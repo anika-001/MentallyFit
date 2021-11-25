@@ -16,16 +16,6 @@ export let navbar = [
     },
     {
         "role":"user",
-        "name":"Productivity",
-        "link":"/productivity",
-    },
-    {
-        "role":"user",
-        "name":"Activities",
-        "link":"/activities",
-    },
-    {
-        "role":"user",
         "name":"Safe Rooms",
         "link":"/saferoom",
     },
@@ -33,10 +23,5 @@ export let navbar = [
         "role":"user",
         "name":"Forum",
         "link":"/forum",
-    },
-    {
-        "role":"user",
-        "name":"events",
-        "link":"/events",
     }
 ]
