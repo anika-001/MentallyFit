@@ -6,6 +6,21 @@ export let navbar = [
     },
     {
         "role":"user",
+        "name":"Home",
+        "link":"/home",},
+    // },
+    {
+        "role":"user",
+        "name":"Calmness",
+        "link":"/saferoom",
+    },
+    {
+        "role":"user",
+        "name":"Productivity",
+        "link":"/productivity",
+    },
+    {
+        "role":"user",
         "name":"Activities",
         "link":"/activities",
     },
@@ -19,4 +34,9 @@ export let navbar = [
         "name":"Forum",
         "link":"/forum",
     },
+    {
+        "role":"user",
+        "name":"events",
+        "link":"/events",
+    }
 ]

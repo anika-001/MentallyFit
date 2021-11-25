@@ -44,6 +44,13 @@ import { PuzzleComponent } from './puzzle/puzzle.component';
 import { PlantComponent } from './plant/plant.component';
 import { TorchComponent } from './torch/torch.component';
 import { ReachedComponent } from './reached/reached.component';
+import { TempleinjapanComponent } from './templeinjapan/templeinjapan.component';
+import { AddeventComponent } from './addevent/addevent.component';
+import { HashtagComponent } from './hashtag/hashtag.component';
+import { IslandComponent } from './island/island.component';
+import { MeditateComponent } from './meditate/meditate.component';
+import { FunActivityComponent } from './fun-activity/fun-activity.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +85,14 @@ import { ReachedComponent } from './reached/reached.component';
     PuzzleComponent,
     PlantComponent,
     TorchComponent,
-    ReachedComponent
+    ReachedComponent,
+    TempleinjapanComponent,
+    AddeventComponent,
+    HashtagComponent,
+    IslandComponent,
+    MeditateComponent,
+    FunActivityComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,

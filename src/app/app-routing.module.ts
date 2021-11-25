@@ -26,6 +26,14 @@ import { ToysComponent } from './toys/toys.component';
 import { RoomComponent } from './room/room.component';
 import { MiddleComponent } from './middle/middle.component';
 import { ReachedComponent } from './reached/reached.component';
+import { TempleinjapanComponent } from './templeinjapan/templeinjapan.component';
+import { AddeventComponent } from './addevent/addevent.component';
+import { HashtagComponent } from './hashtag/hashtag.component';
+import { IslandComponent } from './island/island.component';
+import { MeditateComponent } from './meditate/meditate.component';
+import { FunActivityComponent } from './fun-activity/fun-activity.component';
+import { EventsComponent } from './events/events.component';
+
 const routes: Routes = [
   {
     path: 'signin',
@@ -138,6 +146,34 @@ const routes: Routes = [
     path: 'reachedhome',
     component: ReachedComponent
     
+  },
+  {
+    path: "events",
+    component:EventsComponent
+  },
+  {
+    path: "addevent",
+    component: AddeventComponent
+  },
+  {
+    path: "island",
+    component: IslandComponent
+  },
+  {
+    path: "meditate",
+    component: MeditateComponent
+  },
+  {
+    path: "funactivity",
+    component: FunActivityComponent
+  },
+  {
+    path: "temple",
+    component: TempleinjapanComponent
+  },
+  {
+    path: "events/hashtag",
+   component:HashtagComponent
   }
 ];
 
