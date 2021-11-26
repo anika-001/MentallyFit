@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +12,8 @@ import { AuthService } from '../services/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private as: AuthService, private router: Router, private db: AngularFirestore) { }
-
+  constructor(private as: AuthService, private router: Router, private db: AngularFirestore,private http:HttpClient) { }
+postId:any;
   moods = ["joyful, happy, relaxed, silly, content, great",
     "productive, active, energetic, motivated",
     "average, normal, uneventful, good",
@@ -119,7 +120,24 @@ addstory() {
   var date = new Date()
   this.db.collection("Users").doc(this.user.uid).collection("Stories").doc(date.getFullYear().toString() + " " + date.getMonth().toString() + " " + date.getDate().toString() + " " + date.getDay().toString()).set({ "filler": "filler" }).then(res => {
     this.db.collection("Users").doc(this.user.uid).collection("Stories").doc(date.getFullYear().toString() + " " + date.getMonth().toString() + " " + date.getDate().toString() + " " + date.getDay().toString()).collection("Story").doc(date.getHours().toString() + " " + date.getMinutes().toString() + " " + date.getSeconds().toString()).set({ "story": this.storyform.get("content").value }).then(res => {
+      const headers = { 'content-type': 'application/json',
+    'x-rapidapi-host': 'text-analysis12.p.rapidapi.com',
+    'x-rapidapi-key': '21f05a919bmsh006432281901f7fp113deejsn5660fdc3d48d'};
+    const body = { language:'english',text: this.storyform.get("content").value };
+    this.http.post<any>('https://text-analysis12.p.rapidapi.com/sentiment-analysis/api/v1.1', body, { headers }).subscribe(data => {
+        this.postId = data;
+        // console.log("lk");
+        console.log(this.postId.sentiment);
+        if(this.postId.sentiment== "negative"){console.log(this.postId.sentiment);
+          this.http.post<any>('https://all-citizens-bank.herokuapp.com/sendpositivity', { title: this.postId.sentiment }).subscribe(data => {
+            this.postId = data;
+            console.log(data);
+            console.log("data");
+        });
+      }
+    });
       this.storyform.get("content").setValue("");
+
     });
   })
 }

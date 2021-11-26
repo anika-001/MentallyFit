@@ -25,7 +25,7 @@ export let saferoom = [
     },
     {
         "name": "Japanese Temple",
-        // "image":
+        //Credits:  Music by Adrian von Ziegler  https://www.youtube.com/watch?v=EbftqekNkVY
         "link":"/temple",
         "audio":"./../../assets/Audios/saferoombg.mp3",
     }
