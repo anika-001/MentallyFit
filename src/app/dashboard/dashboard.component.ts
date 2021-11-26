@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
   temp = [];
   in: boolean = true;
 
+  images = ["../../assets/images/chi1.jpeg", "../../assets/images/chi1.jpeg", "../../assets/images/chi1.jpeg", "../../assets/images/chi1.jpeg", "../../assets/images/chi1.jpeg", "../../assets/images/chi1.jpeg"]
   stories: Array<any> = [];
 
   stories2: any;
@@ -51,16 +52,10 @@ export class DashboardComponent implements OnInit {
     this.db.collection("Users").doc(this.user.uid).collection("Moods").snapshotChanges().subscribe(res => {
       // this.usermoods = res;
       for(let i of res){
-        // console.log(i.payload.doc.id);
-        // let date = i.payload.doc.id.split(" ");
-        // console.log(this.datetodaynumber("2021 0 7 5"));
         this.usermoods[this.datetodaynumber(i.payload.doc.id)].mood = i.payload.doc.data().mood;
         this.usermoods[this.datetodaynumber(i.payload.doc.id)].id = i.payload.doc.id;
         
       }
-      // this.temp = []
-      // for (let i = 0; i < (15 - res.length); i++) this.temp.push(i);
-      // for (let i = 0; i < 52; i++) this.temp.push(i);
     });
   }
 

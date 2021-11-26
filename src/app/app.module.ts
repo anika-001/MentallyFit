@@ -38,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IslandComponent } from './island/island.component';
 import { MeditateComponent } from './meditate/meditate.component';
 import { MyapirpComponent } from './myapirp/myapirp.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { MyapirpComponent } from './myapirp/myapirp.component';
     IslandComponent,
     MeditateComponent,
     MyapirpComponent,
+    ChatroomComponent,
 
   ],
   imports: [

@@ -16,6 +16,7 @@ import { TempleinjapanComponent } from './templeinjapan/templeinjapan.component'
 import { IslandComponent } from './island/island.component';
 import { MeditateComponent } from './meditate/meditate.component';
 import { MyapirpComponent } from './myapirp/myapirp.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path: "myapi1",
     component: MyapirpComponent
+  },
+  {
+    path: "chat",
+    component: ChatroomComponent
   }
 ];
 

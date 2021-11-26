@@ -49,7 +49,7 @@
                             'col3': usermoods[(j*7) + i].mood == '3', 
                             'col4': usermoods[(j*7) + i].mood == '4', 
                             'col5': usermoods[(j*7) + i].mood == '5' 
-                        }">
+                        }" (click) = "getstory(usermoods[(j*7) + i].id)">
     
                             </div>
                         </div>
@@ -65,10 +65,31 @@
                         How are you feeling today? --> Pick one -->
                     </div>
                     <div class="colorpanel">
-                        <div class="coll col{{i}}" *ngFor="let i of [0, 1, 2, 3, 4, 5]" (click)="addmood(i)"></div>
+                        <div class="coll col{{i}}" *ngFor="let i of [0, 1, 2, 3, 4, 5]" (click)="addmood(i)">
+                            <div class="img img{{i}}">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <div class = "emotions">
+                <div class = "emotionset" >
+                    <div style="display: flex;" *ngFor="let i of [0, 1, 2]">
+                        <div class="img img{{i}}"></div>
+                        <div>{{moods[i]}}</div>
+                    </div>
+                </div>
+                <div class = "emotionset" style="margin-left: 5%;">
+                    <div style="display: flex;" *ngFor="let i of [3, 4, 5]">
+                        <div class="img img{{i}}"></div>
+                        <div>{{moods[i]}}</div>
                     </div>
                 </div>
             </div>
+            
         </div>
         <div class="buttonslide" (click)="togglein()">
             <div style="font-family: country; font-size: 150%;">
