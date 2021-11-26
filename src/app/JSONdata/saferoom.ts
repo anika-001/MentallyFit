@@ -23,4 +23,17 @@ export let saferoom = [
         "link":"/mall",
         "audio":"./../../assets/Audios/saferoombg.mp3",
     },
+    {
+        "name": "Japanese Temple",
+        // "image":
+        "link":"/temple",
+        "audio":"./../../assets/Audios/saferoombg.mp3",
+    }
+    ,
+    {
+        "name": "Calm Island",
+        // "image":
+        "link":"/island",
+        "audio":"./../../assets/Audios/saferoombg.mp3",
+    }
 ]
