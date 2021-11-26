@@ -18,5 +18,10 @@ export let navbar = [
         "role":"user",
         "name":"Forum",
         "link":"/forum",
+    },
+    {
+        "role":"user",
+        "name":"Meditate",
+        "link":"/meditate",
     }
 ]
