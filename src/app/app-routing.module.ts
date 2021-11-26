@@ -15,6 +15,7 @@ import { HouseComponent } from './house/house.component';
 import { TempleinjapanComponent } from './templeinjapan/templeinjapan.component';
 import { IslandComponent } from './island/island.component';
 import { MeditateComponent } from './meditate/meditate.component';
+import { MyapirpComponent } from './myapirp/myapirp.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: "temple",
     component: TempleinjapanComponent
+  },
+  {
+    path: "myapi1",
+    component: MyapirpComponent
   }
 ];
 
