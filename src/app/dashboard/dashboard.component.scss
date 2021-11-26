@@ -1,4 +1,5 @@
 .main {
+    margin-top: 10vh;
     height: 100vh;
     max-width: 100vw;
     // background: linear-gradient(to bottom, #00c6df, #ffffff 10%);
@@ -19,7 +20,7 @@
     // background-color: rgb(252, 252, 252);
     height: 30vh;
     width: 80%;
-    background-color: blue;
+    background-color: var(--dpink);
     // display: flex;
     // border-top: solid thin silver;
 }
@@ -35,7 +36,7 @@
     display: flex;
     align-items: center;
     // margin-left: 5%;
-    background-color: aquamarine;
+    background-color: var(--dpink);
 }
 
 .month{
@@ -44,7 +45,7 @@
 .moods {
     width: 100%;
     height: 25vh;
-    background-color: #00c6df;
+    background-color: var(--lpink);
     display: flex;
 }
 
@@ -62,6 +63,10 @@
     border-right: solid 1px silver;
     text-align: center;
     cursor: pointer;
+}
+.moodbox:hover {
+    opacity: 0.5;
+    background-color: var(--lpink);
 }
 
 .days{
@@ -105,7 +110,7 @@
     align-items: center;
     text-align: center;
     font-family: country;
-    font-size: 250%;
+    font-size: 150%;
 }
 
 .colorpanel {
@@ -277,7 +282,7 @@
 
 .outwardnote{
     position: absolute;
-    background-color: pink;
+    background-color: var(--grey);
     height: 80vh;
     width: 70vw;
     top: 10%;
@@ -318,8 +323,16 @@
 }
 
 .tracker{
-    background-color: palegoldenrod;
+    // background-color:rgba(128, 128, 128, 0.281);
+    // border: blur(8px) gray;
+    // border-radius: 10px;
+    // filter: blur(8px);
+    // -webkit-filter: blur(8px);
     flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonslide{
@@ -331,5 +344,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: aqua;
+    border-radius: 10px;
+    box-shadow: -0.5em 0 .4em gray;
+    background-color: var(--lpink);
 }
