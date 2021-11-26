@@ -35,5 +35,17 @@ export let saferoom = [
         // "image":
         "link":"/island",
         "audio":"./../../assets/Audios/saferoombg.mp3",
+    },
+    {
+        "name": "Vortex",
+        // "image":
+        "link":"https://elderlycomplexagents.jv20201.repl.co/",
+        "audio":"./../../assets/Audios/saferoombg.mp3",
+    },
+    {
+        "name": "Calm Island",
+        // "image":
+        "link":"/island",
+        "audio":"./../../assets/Audios/saferoombg.mp3",
     }
 ]
