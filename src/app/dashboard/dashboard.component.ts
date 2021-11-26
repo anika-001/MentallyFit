@@ -20,10 +20,15 @@ export class DashboardComponent implements OnInit {
     "sad, lonely, numb, depressed, insecure",
     "angry, frustrated, anxious, grumpy"]
   user: any;
+  monthdays: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  offset = 5;
   months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  mshort = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
   days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  usermoods: any;
+  usermoods: Array<any> = [];
   temp = [];
+  in: boolean = true;
+
   stories: Array<any> = [];
 
   stories2: any;
@@ -32,6 +37,8 @@ export class DashboardComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    for (let i = 0; i < 53; i++) this.temp.push(i);
+    for(let i = 0; i < (53*7); i++) this.usermoods.push({id: "", mood: -1})
     this.as.getUserState().subscribe(res => {
       if (!res) this.router.navigate(['/signin'])
       this.user = res;
@@ -42,9 +49,18 @@ export class DashboardComponent implements OnInit {
 
   getMoods() {
     this.db.collection("Users").doc(this.user.uid).collection("Moods").snapshotChanges().subscribe(res => {
-      this.usermoods = res;
-      this.temp = []
-      for (let i = 0; i < (15 - res.length); i++) this.temp.push(i);
+      // this.usermoods = res;
+      for(let i of res){
+        // console.log(i.payload.doc.id);
+        // let date = i.payload.doc.id.split(" ");
+        // console.log(this.datetodaynumber("2021 0 7 5"));
+        this.usermoods[this.datetodaynumber(i.payload.doc.id)].mood = i.payload.doc.data().mood;
+        this.usermoods[this.datetodaynumber(i.payload.doc.id)].id = i.payload.doc.id;
+        
+      }
+      // this.temp = []
+      // for (let i = 0; i < (15 - res.length); i++) this.temp.push(i);
+      // for (let i = 0; i < 52; i++) this.temp.push(i);
     });
   }
 
@@ -111,6 +127,42 @@ addstory() {
 addmood(mood) {
   var date = new Date()
   this.db.collection("Users").doc(this.user.uid).collection("Moods").doc(date.getFullYear().toString() + " " + date.getMonth().toString() + " " + date.getDate().toString() + " " + date.getDay().toString()).set({ "mood": mood });
+}
+
+datetodaynumber(date: string){
+  let datearr = date.split(" ");
+  let num = Number(datearr[2]) - 1;
+  for(let i = 0; i < Number(datearr[1]); i++){
+    num += this.monthdays[i];
+  }
+  num += this.offset;
+  return num;
+}
+
+daynumbertodate(num: number){
+  num -= this.offset;
+  num += 1;
+  let month = 0;
+  if(num <= 0){
+    return String(31 + num) + " December 2020";
+  }
+  for(let i = 0; i < 12; i++){
+    if(num - this.monthdays[i] > 0){
+      num -= this.monthdays[i]
+      month += 1;
+    }
+    else{
+      break
+    }
+  }
+  if(month == 12){
+    return String(num) + " January 2022";
+  }
+  return String(num) + " " + this.months[month] + " " + "2021";
+}
+
+togglein(){
+  this.in = !this.in;
 }
 
 }

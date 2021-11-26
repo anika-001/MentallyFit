@@ -8,6 +8,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
@@ -69,7 +70,8 @@ import { MeditateComponent } from './meditate/meditate.component';
     MatSelectModule,
     MatGridListModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    MatTooltipModule
   
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
