@@ -11,11 +11,6 @@ export let navbar = [
     // },
     {
         "role":"user",
-        "name":"Calmness",
-        "link":"/saferoom",
-    },
-    {
-        "role":"user",
         "name":"Safe Rooms",
         "link":"/saferoom",
     },
