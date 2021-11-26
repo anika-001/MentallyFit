@@ -5,10 +5,10 @@
         <form [formGroup]="storyform" class="enterstory">
             Today's Entry
             <textarea placeholder="Type your entry" formControlName="content" type="text" class="ip"></textarea>
-            <button class="custbutton" style="font-size: 50%;" (click)="addstory()">Write to diary</button>
+            <button class="custbutton btn-4" style="font-size: 50%;" (click)="addstory()">Write to diary</button>
         </form>
         <div class="stories">
-            <button class="custbutton" (click)="getstories()">Get all entries</button>
+            <button class="custbutton btn-4" (click)="getstories()" style="margin-left: 80%;">Get all entries</button>
             <div class="storyouter" *ngFor="let x of stories2; let i = index">
                 <div class="date">{{getdate(stories2[i].payload.doc.id)}}</div>
                 <div class="storyinner" *ngFor="let y of stories[x.payload.doc.id]">
