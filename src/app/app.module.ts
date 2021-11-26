@@ -34,9 +34,10 @@ import { FilldbComponent } from './filldb/filldb.component';
 import { HouseComponent } from './house/house.component';
 
 import { TempleinjapanComponent } from './templeinjapan/templeinjapan.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { IslandComponent } from './island/island.component';
 import { MeditateComponent } from './meditate/meditate.component';
+import { MyapirpComponent } from './myapirp/myapirp.component';
 
 
 @NgModule({
@@ -57,9 +58,12 @@ import { MeditateComponent } from './meditate/meditate.component';
     TempleinjapanComponent,
     IslandComponent,
     MeditateComponent,
+    MyapirpComponent,
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
